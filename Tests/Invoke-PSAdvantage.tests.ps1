@@ -1,6 +1,6 @@
 Describe 'Invoke-Advantage' {
     BeforeAll {
-        Import-Module -Name "../../PSAdvantage.psd1" -Force
+        Import-Module -Name "$($PSScriptRoot)/../../PSAdvantage.psd1" -Force
     }
 
     AfterAll {}

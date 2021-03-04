@@ -8,11 +8,12 @@ Describe 'Invoke-Advantage' {
     Context 'Function Parameter validation' {
         BeforeAll {
             $SCRIPT:FunctionName = 'Invoke-Advantage'
+            $SCRIPT:ModuleName = 'PSAdvantage'
         }
 
         It 'has a parameter "<Name>"' {
             param($Name)
-                $AllParameterNames = (Get-Command -Module 'PSAdvatange' -Name $FunctionName).Parameters.Keys
+                $AllParameterNames = (Get-Command -Module $ModuleName -Name $FunctionName).Parameters.Keys
                 $Name | Should -BeIn $AllParameterNames
         } -TestCases @(
             @{Name = 'owner' }
